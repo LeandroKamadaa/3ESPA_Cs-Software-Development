@@ -1,6 +1,6 @@
 ﻿class Program
 {
-    static void Main)
+    static void Main()
     {
         Console.WriteLine("Qual seu nome?");
         string nome = Console.ReadLine();
