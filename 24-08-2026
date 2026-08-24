@@ -1,0 +1,114 @@
+//-1.Peça a nota de um aluno e classifique: Aprovado(>= 7), Recuperacao(>= 5) ou Reprovado
+
+
+Console.WriteLine("Digite a nota: ");
+float nota = float.Parse(Console.ReadLine());
+
+if (nota >= 7)
+{
+    Console.WriteLine("Aprovado");
+}
+else if (nota <= 5)
+{
+    Console.WriteLine("Recuperacao");
+}
+else
+{
+    Console.WriteLine("Reprovado");
+}
+
+//-2.Solicite um numero de 1 a 7 e exiba o dia da semana correspondente (switch)
+
+
+Console.WriteLine("Digite numero de 1 a 7: ");
+int numero = int.Parse(Console.ReadLine());
+
+switch (numero)
+{
+    case 1:
+        Console.WriteLine("Segunda");
+        break;
+    case 2:
+        Console.WriteLine("Terça");
+        break;
+    case 3:
+        Console.WriteLine("Quarta");
+        break;
+    case 4:
+        Console.WriteLine("Quinta");
+        break;
+    case 5:
+        Console.WriteLine("Sexta");
+        break;
+    case 6:
+        Console.WriteLine("Sábado");
+        break;
+    case 7:
+        Console.WriteLine("Domingo");
+        break;
+}
+
+//-  3. Use switch expression para converter um codigo HTTP em mensagem
+
+
+Console.WriteLine("Digite codigo http: ");
+int http = int.Parse(Console.ReadLine());
+
+string mensagem = http switch
+{
+    200 => "OK",
+    404 => "Nao encontrado",
+    500 => "Erro interno",
+    _ => "Codigo desconhecido"
+};
+Console.WriteLine(mensagem);
+
+//-  4. Solicite tres numeros e exiba o maior usando operador ternario
+
+
+Console.WriteLine("Digite o primeiro numero: ");
+int n1 = int.Parse(Console.ReadLine());
+Console.WriteLine("Digite o segundo numero: ");
+int n2 = int.Parse(Console.ReadLine());
+Console.WriteLine("Digite o terceiro numero: ");
+int n3 = int.Parse(Console.ReadLine());
+
+int maior = (n1 > n2 && n1 > n3) ? n1 : (n2 > n3) ? n2 : n3;
+
+Console.WriteLine($"O maior número é: {maior}");
+
+//-  5. Calcule o IMC e exiba a categoria usando if/else encadeado
+
+double peso = 78.0;
+double altura = 1.93; 
+double imc = peso / (altura * altura);
+
+string categoria = "";
+
+if (imc < 18.5)
+{
+    categoria = "Abaixo do peso";
+}
+else if (imc < 25.0)
+{
+    categoria = "Peso normal";
+}
+else if (imc < 30.0)
+{
+    categoria = "Sobrepeso";
+}
+else if (imc < 35.0)
+{
+    categoria = "Obesidade Grau I";
+}
+else if (imc < 40.0)
+{
+    categoria = "Obesidade Grau II";
+}
+else
+{
+    categoria = "Obesidade Grau III";
+}
+
+Console.WriteLine($"Seu IMC é: {imc:F2}");
+Console.WriteLine($"Categoria: {categoria}");
